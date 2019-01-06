@@ -1,8 +1,15 @@
 public class LinkedList<E>{
     int size;
-    private Node<E> head = new Node(null, null, null);
-    private Node<E> current = head;
-    private Node<E> tail = head;
+    private Node<E> head;
+    private Node<E> current;
+    private Node<E> tail;
+
+    public LinkedList(){
+        this.head = new Node(null, null, null);
+        this.current = head;
+        this.tail = new Node(null, null, null);
+    }
+
 
     public int size(){ return size; }
 
@@ -28,6 +35,7 @@ public class LinkedList<E>{
         else if(head.getNext() == null){
             head.setNext(add);
             tail = add;
+            tail.setPrevious(head);
         }
         else {
             tail.setNext(add);
@@ -40,6 +48,7 @@ public class LinkedList<E>{
         for(int x = 0; x < i - 1; x++){
             current = current.getNext();
         }
+        //System.out.println(current.getValue());
         current.setNext(current.getNext().getNext());
         current.getNext().setPrevious(current);
     }

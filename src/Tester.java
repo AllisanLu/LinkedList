@@ -9,24 +9,18 @@ public class Tester {
         list.remove(2);
 
         for(int i = 0; i < list.size(); i++){
-            if(list.getCurrent().getValue() == null)
-                System.out.println(" Current: " + list.getCurrent() +
-                        " Previous: " + list.getCurrent().getPrevious() +
-                        " Next: " + list.getCurrent().getNext() + " " + list.getCurrent().getNext().getValue());
-
-            else if(list.getCurrent().getPrevious() == null)
-                System.out.println(" Current: " + list.getCurrent() + " " + list.getAt(i) +
-                    " Previous: " + list.getCurrent().getPrevious() +
-                    " Next: " + list.getCurrent().getNext() + " " + list.getCurrent().getNext().getValue());
-
-            else if(list.getCurrent().getNext() == null)
-                System.out.println(" Current: " + list.getCurrent() + " " + list.getAt(i) +
-                        " Previous: " + list.getCurrent().getPrevious() + " " + list.getCurrent().getPrevious().getValue() +
-                        " Next: " + list.getCurrent().getNext());
-            else
-                System.out.println(" Current: " + list.getCurrent() + " " + list.getAt(i) +
-                        " Previous: " + list.getCurrent().getPrevious() + " " + list.getCurrent().getPrevious().getValue() +
-                        " Next: " + list.getCurrent().getNext() + " " + list.getCurrent().getNext().getValue());
+           if(i == 0)
+               System.out.println(" Current: " + list.getCurrent() + " " + list.getAt(i) +
+                       " Previous: " + list.getCurrent().getPrevious() +
+                       " Next: " + list.getCurrent().getNext() + " " + list.getCurrent().getNext().getValue());
+           else if(i == list.size() - 1)
+               System.out.println(" Current: " + list.getCurrent() + " " + list.getAt(i) +
+                       " Previous: " + list.getCurrent().getPrevious() + " " + list.getCurrent().getPrevious().getValue() +
+                       " Next: " + list.getCurrent().getNext());
+           else
+               System.out.println(" Current: " + list.getCurrent() + " " + list.getAt(i) +
+                       " Previous: " + list.getCurrent().getPrevious() + " " + list.getCurrent().getPrevious().getValue() +
+                       " Next: " + list.getCurrent().getNext() + " " + list.getCurrent().getNext().getValue());
         }
     }
 }
